@@ -1,5 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Form from "./Component/Form";
 
 export default function App () {
     return (
@@ -10,13 +11,9 @@ export default function App () {
                         <div className="card rounded-3">
                             <div className="card-body p-4">
 
-                                <h4 className="text-center my-3 pb-3">To Do App</h4>
+                                <h4 className="text-center my-3 pb-3">Poster un article</h4>
 
-                                <Form setTodos={setTodos} todos={todos}/>
-
-                                {todos.map((todo) => (
-                                    (<Todo title={todo.title} text={todo.text} key={todo.id}/>)
-                                ))}
+                                <Form title={article.title} text={article.text}/>
 
                             </div>
                         </div>
