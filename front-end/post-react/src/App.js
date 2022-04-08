@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import FormArticle from "./Component/FormArticle";
 import Article from "./Component/Article";
@@ -6,13 +6,30 @@ import {generateUniqueID} from "web-vitals/dist/modules/lib/generateUniqueID";
 
 export default function App () {
 
-  const [articles, setArticles] = useState( [
-    {
-      title: "Article exemple",
-      text: "bdsfjdfllkdflk",
-      key : generateUniqueID()
-    },
-  ] );
+  /*    useEffect(() => {
+    const body = new URLSearchParams({
+        username: 'Francis',
+        password: 'password',
+    })
+
+    const headers = new Headers({
+        'Content-Type':'application/x-www-form-urlencoded',
+        'Authorization': Basic ${btoa('Francis:password')}
+    })
+
+    fetch('http://localhost:2345', {
+    method: 'POST',
+    body: body,
+    headers: headers,
+    mode: 'cors',
+    credentials: 'include'
+    })
+    .then(res => res.json())
+        .then(data => console.log(data))
+    }, [])*/
+
+
+  const [articles, setArticles] = useState( [] );
 
   return (
       <section className="vh-100" style={{backgroundColor: '#eee'}}>
