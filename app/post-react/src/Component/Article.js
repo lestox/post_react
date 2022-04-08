@@ -2,10 +2,8 @@ import React from "react";
 
 export default function Article({title, text}) {
 
-    let [title, setTitle] = React.useState("To do");
-    
     return (
-        <table className="table mb-4" style={{ display: show ? "block" : "none" }}>
+        <table className="table mb-4">
             <thead>
             <tr>
                 <th scope="col">Title</th>
