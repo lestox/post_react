@@ -32,34 +32,28 @@ if ($_POST)
 {
 
     // set response code - 200 OK
-
     http_response_code(200);
-    $title = $_POST['title'];
-    $text = $_POST['text'];
 
     // data
+    $id = $_POST['id'];
+    $title = $_POST['title'];
+    $text = $_POST['text'];
+    $token = $_POST['token'];
 
-    $msg = $_POST['number'] . $_POST['message'];
-
-    // Headers
-
-    $headers = "MIME-Version: 1.0\r\n";
-    $headers.= "Content-type: text/html; charset=UTF-8\r\n";
-    $headers.= "From: <" . $from . ">";
-    mail($to, $subject, $msg, $headers);
+    // SQL
+    $sql  = "INSERT INTO articles VALUES (id, title, text)";
+    $stmt= $pdo->prepare($sql);
+    $stmt->execute([$id, $title, $text]);
 
     // echo json_encode( $_POST );
-
-    echojson_encode(array(
-        "sent" => true
-    ));
+    echo(json_encode(array(
+        "" => true
+    )));
 }
 else
 {
 
     // tell the user about error
 
-    echojson_encode(["sent" => false, "message" => "Something went wrong"]);
+    echo(json_encode(["sent" => false, "message" => "Something went wrong"]));
 }
-
-?>

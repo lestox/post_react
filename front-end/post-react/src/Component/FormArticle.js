@@ -1,5 +1,6 @@
 import {Component} from "react";
 import {generateUniqueID} from "web-vitals/dist/modules/lib/generateUniqueID";
+import {render} from "react-dom";
 
 export default class FormArticle extends Component {
 
@@ -28,19 +29,39 @@ export default class FormArticle extends Component {
     handleSubmit(event) {
         event.preventDefault();
         console.log(this.props.articles)
-        if(this.props.articles.length >= 5) {
-            alert("You already have 5 todos, if you want tu create another one do you have to finish and delete one !")
-            return
-        }
+
         const newItem = {
             id: generateUniqueID(),
             title: this.state.title,
             text: this.state.text,
+            token: 0,
         }
         this.setArticles(prev => [...prev, newItem]);
+
+        const body = new URLSearchParams({
+            /*username: 'Francis',
+            password: 'password',*/
+        })
+
+        const headers = new Headers({
+            'Content-Type':'application/x-www-form-urlencoded',
+            'Authorization': ''
+        })
+
+        fetch('http://localhost:2345', {
+            method: 'POST',
+            data: newItem,
+            body: body,
+            headers: headers,
+            mode: 'no-cors',
+            credentials: 'include'
+        })
+            // .then(response => response.json())
+            // .then(json => console.log(json))
     }
 
-    render() {
+    render()
+    {
         {
             return (
                 <form className="row row-cols-lg-auto g-3 justify-content-center align-items-center mb-4 pb-2" onSubmit={this.handleSubmit}>

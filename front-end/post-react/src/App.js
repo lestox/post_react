@@ -6,15 +6,16 @@ import {generateUniqueID} from "web-vitals/dist/modules/lib/generateUniqueID";
 
 export default function App () {
 
-  /*    useEffect(() => {
-    const body = new URLSearchParams({
-        username: 'Francis',
-        password: 'password',
-    })
+    useEffect(() => {
+        const body = new URLSearchParams({
+            /*username: 'Francis',
+            password: 'password',*/
+        })
 
-    const headers = new Headers({
-        'Content-Type':'application/x-www-form-urlencoded',
-        'Authorization': Basic ${btoa('Francis:password')}
+        const headers = new Headers({
+            'Content-Type':'application/x-www-form-urlencoded',
+            'Authorization': ''
+          // Basic ${btoa('Francis:password')}
     })
 
     fetch('http://localhost:2345', {
@@ -26,7 +27,7 @@ export default function App () {
     })
     .then(res => res.json())
         .then(data => console.log(data))
-    }, [])*/
+    }, [])
 
 
   const [articles, setArticles] = useState( [] );
