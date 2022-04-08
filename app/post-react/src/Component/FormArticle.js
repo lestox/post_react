@@ -1,7 +1,7 @@
 import {Component} from "react";
 import {generateUniqueID} from "web-vitals/dist/modules/lib/generateUniqueID";
 
-export default class Form extends Component {
+export default class FormArticle extends Component {
 
     setArticles = this.props.setArticles;
 

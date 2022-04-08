@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Form from "./Component/Form";
+import FormArticle from "./Component/FormArticle";
 import Article from "./Component/Article";
 import {generateUniqueID} from "web-vitals/dist/modules/lib/generateUniqueID";
 
@@ -24,7 +24,7 @@ export default function App () {
 
                   <h4 className="text-center my-3 pb-3">Poster un article</h4>
 
-                  <Form setArticles={setArticles} articles={articles}/>
+                  <FormArticle setArticles={setArticles} articles={articles}/>
 
                   {articles.map((article) => (
                       (<Article title={article.title} text={article.text} key={article.id}/>)
