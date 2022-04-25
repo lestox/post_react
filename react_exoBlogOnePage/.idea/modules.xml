@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/post_react.iml" filepath="$PROJECT_DIR$/.idea/post_react.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/fetchPost.iml" filepath="$PROJECT_DIR$/.idea/fetchPost.iml" />
     </modules>
   </component>
 </project>
